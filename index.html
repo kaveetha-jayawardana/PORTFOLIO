@@ -4,55 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KS Jayawardana - Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #121212;
+            color: #ffffff;
         }
         header {
-            background: #0073e6;
+            background: linear-gradient(90deg, #0073e6, #00c6ff);
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 40px;
+            font-size: 1.5rem;
         }
         nav {
             display: flex;
             justify-content: center;
-            background: #005bb5;
-            padding: 10px;
+            background: #1e1e1e;
+            padding: 15px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
             font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #00c6ff;
         }
         section {
-            padding: 20px;
-            max-width: 900px;
+            padding: 40px;
+            max-width: 1100px;
             margin: auto;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 15px rgba(0, 198, 255, 0.2);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
         .project {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
+            background: #292929;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .project:hover {
+            transform: scale(1.05);
         }
         .project h3 {
-            color: #0073e6;
+            color: #00c6ff;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .skill-box {
+            background: #292929;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-box:hover {
+            transform: scale(1.1);
+        }
+        .skill-box i {
+            font-size: 40px;
+            color: #00c6ff;
+            margin-bottom: 10px;
         }
         footer {
             background: #0073e6;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -69,33 +109,57 @@
     </nav>
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a passionate data science enthusiast with a keen interest in AI, machine learning, and data-driven solutions.</p>
+        <p>I am a highly motivated undergraduate and Data Engineer with a strong foundation in data visualization, machine learning, and programming languages like Python and R. I am eager to leverage my knowledge and gain valuable real-world experience in the field of data science.</p>
+        <p>Passionate about tackling complex problems through data analysis, I excel at uncovering insights and crafting compelling visualizations. I am excited about continuous learning and growth, constantly seeking new challenges to contribute my skills and make a positive impact.</p>
     </section>
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>Dengue Outbreak Prediction</h3>
-            <p>Utilized ARIMA and regression models to predict dengue outbreaks based on weather patterns.</p>
-        </div>
-        <div class="project">
-            <h3>Policy Genie AI</h3>
-            <p>Developed an AI-driven web application for summarizing and generating economic policies.</p>
+        <div class="projects-container">
+            <div class="project">
+                <h3>Dengue Outbreak Prediction</h3>
+                <p>Utilized ARIMA and regression models to predict dengue outbreaks based on weather patterns.</p>
+            </div>
+            <div class="project">
+                <h3>Policy Genie AI</h3>
+                <p>Developed an AI-driven web application for summarizing and generating economic policies.</p>
+            </div>
+            <div class="project">
+                <h3>Customer Churn Prediction</h3>
+                <p>Built a predictive model using machine learning to identify customers at risk of churning.</p>
+            </div>
+            <div class="project">
+                <h3> Games of Glory Olympics Dashboard</h3>
+                <p>Designed an interactive dashboard analyzing Olympics data from 2000-2016, highlighting key trends and insights.</p>
+            </div>
+            <div class="project">
+                <h3> The Greater Manchester Domestic Energy Performance Analyzer</h3>
+                <p>Designed an interactive dashboard analyzing Energy Performance Certificate (EPC) data in Manchester's local authorities from 2013 - 2023, highlighting key trends and insights.</p>
+            </div>
         </div>
     </section>
     <section id="skills">
         <h2>Technical Skills</h2>
-        <ul>
-            <li>Python, R, SQL</li>
-            <li>Machine Learning & AI</li>
-            <li>Data Visualization & Storytelling</li>
-            <li>Web Development (HTML, CSS, JavaScript)</li>
-        </ul>
+        <div class="skills-container">
+            <div class="skill-box"><i class="fab fa-python"></i><p>Python</p></div>
+            <div class="skill-box"><i class="fas fa-database"></i><p>SQL</p></div>
+            <div class="skill-box"><i class="fas fa-chart-line"></i><p>Machine Learning</p></div>
+            <div class="skill-box"><i class="fas fa-chart-bar"></i><p>Data Visualization</p></div>
+            <div class="skill-box"><i class="fas fa-code"></i><p>R Programming</p></div>
+        </div>
+        <h2>Other Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box"><i class="fas fa-comments"></i><p>Communication (English, Sinhala)</p></div>
+            <div class="skill-box"><i class="fas fa-users"></i><p>Teamwork</p></div>
+            <div class="skill-box"><i class="fas fa-user-tie"></i><p>Leadership</p></div>
+            <div class="skill-box"><i class="fas fa-lightbulb"></i><p>Problem Solving</p></div>
+            <div class="skill-box"><i class="fas fa-tasks"></i><p>Project Management</p></div>
+        </div>
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: ks.jayawardana@example.com</p>
+        <p>Email: kaveejay09@gmail.com</p>
         <p>GitHub: <a href="https://github.com/kaveetha-jayawardana" target="_blank">github.com/kaveetha-jayawardana</a></p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/ksjayawardana</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kaveetha-jayawardana-0315aa301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BO09V8Hz%2FTzOH6tXkBacrCg%3D%3D">linkedin.com/in/kaveetha-jayawardana</a></p>
     </section>
     <footer>
         <p>&copy; 2025 KS Jayawardana. All Rights Reserved.</p>
